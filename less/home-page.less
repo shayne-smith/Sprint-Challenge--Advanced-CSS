@@ -4,6 +4,15 @@
 
   .intro {
 
+    img {
+      .imgRadius();
+
+      //Mobile version
+      @media @phone {
+        width: 100%;
+      }
+    }
+
     h2 {
       padding: 15px;
     }
@@ -24,6 +33,19 @@
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+    }
+
+    // Mobile version
+    @media @phone {
+      .flexCenter();
+
+      img {
+        width: 90%;
+      }
+
+      .sky, .launch {
+        display: none;
+      }
     }
   }
 
@@ -58,6 +80,14 @@
       }
 
       .btn {
+        .btn(0.5rem, 1rem, 29%, center, @btn-bg-color, @shuttle-gray, 1px, solid, 1.7rem, @wild-sand);
+        opacity: 1;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: @wild-sand;
+          color: @btn-bg-color;
+        }
       }
     }
 
@@ -70,6 +100,30 @@
         height: auto;
         border-radius: 10px;
       }
+    }
+
+    // Mobile version
+    @media @phone {
+      margin-top: 2rem;
+      padding: 2rem 0;
+      .flexCenter();
+      flex-direction: column-reverse;
+
+      .walk-text, .walk-img {
+        width: 90%;
+        margin: 0;
+      }
+
+      .walk-text {
+        margin-top: 2rem;
+
+        .btn {
+          width: 100%;
+          padding: 2rem;
+          font-size: 2rem;
+        }
+      }
+
     }
   }
 }// home
